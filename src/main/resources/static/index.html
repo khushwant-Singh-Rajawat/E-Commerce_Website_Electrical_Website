@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroSpark - Electrical Products & Repair Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <i class="fas fa-bolt"></i>
+    </div>
+</div>
+
+<!-- FIXED NAVBAR -->
+<nav class="navbar" style="z-index: 9999 !important;">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="#home" class="logo">
+            <i class="fas fa-bolt" style="color: #ff6b35; font-size: 2rem;"></i>
+            <span>Rajawat<span style="color: #ff6b35;">Electrical</span></span>
+        </a>
+
+        <!-- Menu -->
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#products" class="nav-link">Products</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#book-service" class="nav-link">Book Service</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Cart -->
+        <div class="cart-icon" id="cartIcon" style="position: relative;">
+            <i class="fas fa-shopping-cart" style="font-size: 1.5rem; color: #333;"></i>
+            <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+<!-- Hero Image Slider -->
+<section id="home" class="hero-slider">
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&h=800&fit=crop" alt="Electrical Products">
+                <div class="slide-content">
+                    <h1>Premium Electrical Products</h1>
+                    <p>Shop quality electrical products with fast delivery</p>
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76bbb17e?w=1400&h=800&fit=crop" alt="Repair Services">
+                <div class="slide-content">
+                    <h1>Expert Repair Services</h1>
+                    <p>Professional technicians at your doorstep</p>
+                    <a href="#services" class="btn btn-secondary">Book Service</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1587344483176-6dff73d7eb47?w=1400&h=800&fit=crop" alt="Ceiling Fans">
+                <div class="slide-content">
+                    <h1>Ceiling Fans Collection</h1>
+                    <p>Energy efficient fans for every room</p>
+                    <a href="#products" class="btn btn-primary">View Collection</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=1400&h=800&fit=crop" alt="LED Lights">
+                <div class="slide-content">
+                    <h1>LED Lighting Solutions</h1>
+                    <p>Brighten your home with energy saving LEDs</p>
+                    <a href="#products" class="btn btn-primary">Explore Lights</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=800&fit=crop" alt="Electrical Panels">
+                <div class="slide-content">
+                    <h1>Electrical Safety First</h1>
+                    <p>MCBs, switches and safety equipment</p>
+                    <a href="#products" class="btn btn-primary">Safety Products</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Navigation -->
+        <div class="slider-nav">
+            <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="products-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Products</h2>
+            <p>Premium quality electrical products at best prices</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Book Repair Services</h2>
+            <p>Professional electrical repair services at your doorstep</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-service="Fan Repair">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1585320702817-06c28414d8fc?w=400&h=300&fit=crop" alt="Fan Repair">
+                    <div class="service-overlay">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Fan Repair</h3>
+                    <p>Expert ceiling fan, table fan, and exhaust fan repair services</p>
+                    <div class="service-price">Starting ₹299</div>
+                    <button class="btn btn-primary book-service">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card" data-service="Electrical Wiring">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76bbb17e?w=400&h=300&fit=crop" alt="Electrical Wiring">
+                    <div class="service-overlay">
+                        <i class="fas fa-plug-circle-bolt"></i>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Electrical Wiring</h3>
+                    <p>New wiring, rewiring, and electrical panel installation</p>
+                    <div class="service-price">Starting ₹999</div>
+                    <button class="btn btn-primary book-service">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card" data-service="Appliance Repair">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop" alt="Appliance Repair">
+                    <div class="service-overlay">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Appliance Repair</h3>
+                    <p>Washing machine, refrigerator, AC, and other appliances</p>
+                    <div class="service-price">Starting ₹499</div>
+                    <button class="btn btn-primary book-service">Book Now</button>
+                </div>
+            </div>
+            <div class="service-card" data-service="Custom Service">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Custom Service">
+                    <div class="service-overlay">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Custom Service</h3>
+                    <p>Any other electrical repair or installation service</p>
+                    <div class="service-price">Get Quote</div>
+                    <button class="btn btn-primary book-service">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Book Service Modal -->
+<div class="modal" id="bookServiceModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Book Service</h2>
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <form id="serviceForm">
+            <div class="form-group">
+                <input type="text" id="customerName" placeholder="Your Name *" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="customerPhone" placeholder="Phone Number *" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="serviceType" placeholder="Service Type *" readonly>
+            </div>
+            <div class="form-group">
+                <textarea id="serviceDetails" placeholder="Describe your problem / requirements *" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="text" id="customerAddress" placeholder="Complete Address *" required>
+            </div>
+            <div class="form-group">
+                <select id="preferredTime" required>
+                    <option value="">Select Preferred Time</option>
+                    <option value="9-12">9 AM - 12 PM</option>
+                    <option value="12-3">12 PM - 3 PM</option>
+                    <option value="3-6">3 PM - 6 PM</option>
+                    <option value="6-9">6 PM - 9 PM</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<!-- Cart Modal -->
+<div class="modal" id="cartModal">
+    <div class="modal-content large">
+        <div class="modal-header">
+            <h2>Shopping Cart</h2>
+            <button class="modal-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Cart items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76bbb17e?w=600&h=700&fit=crop" alt="About Us">
+            </div>
+            <div class="about-text">
+                <h2>About ElectroSpark</h2>
+                <p>With 15+ years of excellence in electrical services, ElectroSpark is your trusted partner for premium electrical products and professional repair services. Our certified technicians ensure 100% satisfaction.</p>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Certified Experts</h4>
+                        <p>Trained & certified technicians</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Same Day Service</h4>
+                        <p>Quick response guaranteed</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <h4>6 Months Warranty</h4>
+                        <p>On all repair services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="section-header light">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any queries</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 94148 85171</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@electrospark.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>123 Electrical Market<br>Main Road, Your City - 400001</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50/ff6b35/ffffff?text=ES" alt="Logo">
+                    <span>Electro<span style="color: #ff6b35;">Spark</span></span>
+                </div>
+                <p>Your trusted electrical partner for products & services</p>
+                <div class="social-links">
+                    <a href="https://wa.me/919414885171?text=Hi! I need electrical service at RajawatElectrical.com"  class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"  class="facebook-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#"  class="instagram-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li>Fan Repair</li>
+                    <li>Electrical Wiring</li>
+                    <li>Appliance Repair</li>
+                    <li>Custom Service</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i><a href="tel:+919414885171" class="phone-link"> +91 94148 85171</a></p>
+                <p><i class="fas fa-phone"></i><a href="tel:+919887645171" class="phone-link"> +91 98876 45171</a></p>
+                <p><i class="fas fa-envelope"></i> Info@RajawatElectrical.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rajawat Electrical. All rights reserved. | Designed By Kushwant Singh Rajawat</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

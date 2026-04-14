@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+
+spring:
+  # SINGLE SPRING BLOCK - NO DUPLICATES ✅
+  datasource:
+    url: jdbc:h2:mem:rajawatelectrical  # H2 In-Memory Database
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # Auto create tables
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true  # http://localhost:8080/h2-console
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# App Configuration
+app:
+  name: RajawatElectrical
+  version: 1.0.0
+
+# Logging
+logging:
+  level:
+    com.RajawatElectrical: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
